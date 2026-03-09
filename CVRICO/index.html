@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV-RAKOTOSON</title>
+    <link rel="icon" href="BackgroundEraser_20260218_054435863.png">
+    <style>
+        /* tout les element  */
+        * {
+            /* mamafa n par defaut  */
+            margin: 0;
+            padding: 0;
+            /* boudure larg longr  */
+            box-sizing: border-box;
+        }
+
+        .cv-container {
+            /* largeur max io  */
+            max-width: 900px;
+            /* mka ny largeur dispo @ ambony  */
+            width: 100%;
+            background-color: whitesmoke;
+            /* 20% n opacitén io  */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            /* coin arrondi  */
+            border-radius: 10px;
+            /* maminy n midepasse  */
+            overflow: hidden;
+            padding: 40px 40px 30px 40px;
+        }
+
+        .cv-header {
+            /* en tete  */
+            /* 20px espac n section manaraka  */
+            margin-bottom: 20px;
+            /* bordure inferieur 3px epaisseur ,trait feno,  */
+            border-bottom: 3px solid rgb #2c3e50;
+            /* espacmnt interne n amban 20px 
+             */
+            padding-bottom: 20px;
+        }
+
+        .cv-header h1 {
+            color: #2c3e50;
+            /* taille police */
+            font-variation-settings: 28px;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+
+        body {
+            background-color: gainsboro;
+            font-family: 'Times New Roman', Times, sans-serif;
+            /* pour centrer les contenu facilement  */
+            display: flex;
+            /* conteneur  */
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            /* espacmnlt interne 30px haut 15px gauche droit neny ecran kely  */
+            padding: 30px 15px;
+        }
+
+        /* image  */
+        .identity-section {
+            /* identity complet  */
+            /* image @ssn  */
+            display: flex;
+            /* image a droite  */
+            flex-direction: row-reverse;
+            margin-bottom: 25px;
+            /* espacement entre l imge et le texte  */
+            gap: 30px;
+            /* aligne les element en haut mais pas d etirmnt verytical  */
+            align-items: flex-start;
+
+        }
+
+        /* pour contenir img  */
+        .photo-section {
+            /* largeur fixe  */
+            width: 150px;
+            /* hauteur fixe  */
+            height: 180px;
+            /* maminy ny partie miala n conteneur  */
+            overflow: hidden;
+            /* coins arrondis de px */
+            border-radius: 8px;
+            /* ombre porté légè-re decalage X 0,Y 5px,flou 10px,noir 20% */
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            border: 3px solid #2c3e50;
+            /* concerver la tailmle de l(image ) */
+            flex-shrink: 0;
+        }
+
+        .photo-section img {
+            /* 100 NY LARGEUR CONTENEUR NY PARENT  */
+            width: 100%;
+            /* 100 NY HAUTEUR  */
+            height: 100%;
+            /* evite la deformation  */
+            object-fit: cover;
+        }
+
+        .civil-status {
+            /* class etat civil  */
+            /* hakany n espace dispo d atao flex  */
+            flex: 1;
+        }
+
+        .section {
+            /* calsee general hoan sefction ,,espacer les section entre elle  */
+            margin-bottom: 25px;
+        }
+
+        .section h2 {
+            background-color: #34495e;
+            color: white;
+            /* espacement interne 8 en haut et bas / 15 g d  */
+            padding: 8px 15px;
+            /* ha maj anaz  */
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            /* ploice  */
+            font-size: 18px;
+            /* coins arrondi de 5px  */
+            border-radius: 5px;
+            /* hampisy espace n manarak ambany eo  */
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            /* manao maj  */
+            text-transform: uppercase;
+
+        }
+
+        .a {
+            /* hakana ny soulignmnt ny */
+            text-decoration: none;
+            color: #2980b9;
+
+        }
+
+        a:hover {
+            /* mitsipika rhf eo n souris  */
+            text-decoration: underline;
+        }
+
+        /* tableau  */
+        table {
+            /* MAKA N LAREGR CONTENER PARNT  */
+            width: 100%;
+            /* fusion bordure , tss double bordure anaty cellule 1  */
+            border-collapse: collapse;
+            /* bord ex pleint couleur b  */
+            border: 2px solid #34495e;
+            font-size: 15px;
+        }
+
+        /* ambony t  */
+        th {
+            background-color: #34495e;
+            /* text io */
+            color: beige;
+            padding: 10px;
+            border: 1px solid #34495e;
+        }
+
+        td {
+            /* espacement interne 8px h b 10 g d  */
+            padding: 8px 10px;
+            /* b entre c  */
+            border: 1px solid #95a5a6;
+
+        }
+
+        /* alternace de couleur @ligne tableau ,,,section ligne pair (even ) */
+        tbody tr:nth-child(even) {
+            /* ligne paires  */
+            background-color: #f8f9f9;
+        }
+
+        /* competence  */
+        /* style n, liste non oordoné  */
+        ul {
+            /* mamafa b puce par defaut  */
+            list-style-type: none;
+        }
+
+        ul li {
+            padding: 5px 0 5px 25px;
+
+            background-repeat: no-repeat;
+            /* gauche centré verticalement  */
+            background-position: left center;
+
+            background-size: 18px;
+        }
+
+        /* rhf kiytina  */
+        table:hover {
+            background-color: white;
+            color: #2c3e50;
+        }
+
+        /* etet civil it  */
+        .info-grid {
+            /* grille d'info ,,,active l emlode css grid */
+            display: grid;
+            /* hizarana colonne  */
+            /* grid-template-columns: repeat(1, 1fr); */
+            /* enspacement entre ligne 10px  */
+            gap: 10px 20px;
+        }
+
+        .info-item {
+            /* bordure infe 1px pointillé couleur gris  */
+            border-bottom: 1px dashed #bdc3c7;
+            /* espacmnt entre interne bas et de 5px avant la bordure  */
+            padding-bottom: 5px;
+        }
+
+        .info-item strong {
+            color: #2c3e50;
+            /* largeur min pour alligner touts les labels  */
+            min-width: 140px;
+            /* mampandehn mw tss largeur n elmnt  inline  */
+            display: inline-block;
+
+        }
+
+        .download-btn {
+            background-color: #2c3e50;
+            color: azure;
+            border: none;
+            /* espace interne  */
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 16px;
+            cursor: pointer;
+            /* pour centrer eve margn auto  */
+            display: block;
+            /* text grass  */
+            font-weight: bold;
+            /* animation legère  */
+            transition: all 0.3s;
+            /* bordure très plein  */
+            border: 2px solid #2c3e50;
+        }
+
+        /* tsy isehoany @impression  */
+        @media print {
+            .download-btn {
+                display: none;
+            }
+        }
+
+        /* tableau des langue  */
+        .lang-table td:first-child {
+            /* selectioner la premiere cell de chque ligne dans le tbl  */
+            /* gras  */
+            font-weight: bold;
+            background-color: whitesmoke;
+        }
+
+
+        .declaration {
+            font-style: italic;
+            background-color: #f8f9f9;
+            padding: 15px;
+            border-left: 5px solid #2c3e50;
+            /* coins arrondii 0 h 20px d 0 b 10 g*/
+            border-radius: 0 5px 5px 0;
+            /* 20 h 0d 10b 0g */
+            margin: 20px 0 10 0;
+        }
+
+        .signature {
+            /* ha a droite anaz  */
+            text-align: center;
+            /* marg externe en haut e 30px  */
+            margin-top: 40px;
+            margin-left: 680px;
+
+            /* taille de pollice 16 px  */
+            font-size: 16px;
+        }
+
+        .signature p {
+            /* 5px en h et b,0 g et d  */
+            margin: 5px 0;
+            margin-top: 5px;
+        }
+
+        .signature-img {
+            max-width: 150px;
+            height: auto;
+            margin: 10px 0;
+            display: block;
+            /* droiote  */
+            margin-left: auto;
+            /* pour voir les limite  */
+            border: 1px dashed #ccc;
+            padding: 5px;
+        }
+
+        /* effet btn  */
+        .download-btn:hover {
+            /* miova fotsy  */
+            background-color: white;
+            /* miova anio ndraik  */
+            color: #2c3e50;
+
+        }
+
+        /* @mobile  ,,,regle rah inferieur ou egale a 700n ecran*/
+        @media(max-width:700px) {
+            .cv-container {
+                /* reduit l espace interne sur tout les produit  */
+                padding: 20px;
+                /* centre les elemnt horizontallement  */
+                align-items: center;
+            }
+
+            .info-grid {
+                /* 1seul colone @etat civil  */
+                grid-template-columns: 1fr;
+            }
+
+            /* ha colone anaz  */
+            .identity-section {
+                /* verticalm  */
+                flex-direction: column;
+
+            }
+
+            .photo-section {
+                margin-bottom: 15px;
+            }
+
+        }
+    </style>
+    <script>
+        // afahana mamoka ny enregistrer tsara 
+        function downloadPDF() {
+            window.print();
+        }
+    </script>
+</head>
+
+<body>
+    <!-- feuille  -->
+    <div class="cv-container">
+        <div class="cv-header">
+            <h1>CURRICULUM VITAE</h1>
+        </div>
+
+        <div class="identity-section">
+            <div class="photo-section">
+                <img src="Photo d'identité .jpg" alt="ma photo banuit">
+            </div>
+            <div class="civil-status">
+                <!-- hamafana marge amban  -->
+                <div class="section" style="margin-bottom: 0;">
+
+                    <h2>ETAT CIVIL</h2>
+                    <!-- organiser les information  -->
+                    <div class="info-grid">
+
+                        <!-- div.info-item*4>strong  -->
+                        <div class="info-item"><strong>Nom:</strong>RAKOTOSON</div>
+                        <div class="info-item"><strong>Prénom:</strong>Rico</div>
+                        <div class="info-item"><strong>Date et lieu de naissance:</strong>19 Septembre 2006 à
+                            Farafangana
+                        </div>
+                        <div class="info-item"><strong>Nationalité:</strong>Malagasy</div>
+                        <div class="info-item"><strong>Adresse :</strong>Tanambao Tsitiana</div>
+                        <div class="info-item"><strong>contact :</strong>+261 38 24 973 64</div>
+                        <div class="info-item"><strong>email:</strong><a
+                                href="mailto:rakotosonricost@gmail.com">rakotosonricost@gmail.com</a></div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- neny etude sy diplome  -->
+        <div class="section">
+            <h2>ETUDES ET DIPLÔMES OBTENUS</h2>
+            <table boder="4" cellpadding="10" cellspacing="4" style="text-align: center;">
+                <thead>
+                    <tr>
+                        <th>ANNES</th>
+                        <th>DIPLÔME</th>
+                        <th>ETABLISSEMENT</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2025</td>
+                        <td>Baccalauréat série D</td>
+                        <td>Lycée privé St Pierre Chanel Ihosy</td>
+                    </tr>
+                    <tr>
+                        <td>2022</td>
+                        <td>Brevet d'Etudes du Premier Cycle</td>
+                        <td>Collège privé Peter Pan Ihosy</td>
+                    </tr>
+                    <tr>
+                        <td>2018</td>
+                        <td>Certificat d'Etudes Primaires Elémentaires (CEPE)</td>
+                        <td>Collège privé Peter Pan Ihosy</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="section">
+            <h2>COMPETENCES</h2>
+            <ul>
+                <li>Très bonne compétence en adaptaton à chaque situation</li>
+                <li>Maîtrise avancée de la langue française et Anglais</li>
+                <li>Aptitude à communiquer clairement et efficacement</li>
+                <li>Facilmité à collaborer au sein d'une équipe </li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>CONNAISSANCES LINGUSTIQUES</h2>
+            <table boder="4" cellpadding="10" cellspacing="4" style="text-align: center;" class="lang-table">
+
+                <thead>
+                    <tr>
+
+                        <th>DIPLÔME</th>
+                        <th>NIVEAU</th>
+                        <th>COMPETENCE</th>
+
+                </thead>
+                </tr>
+                <tbody>
+                    <tr>
+                        <td>Malagasy</td>
+                        <td>Très bien (maternel)</td>
+                        <td>Parlé, lu, écrit</td>
+                    </tr>
+                    <tr>
+                        <td>Français</td>
+                        <td>Bien</td>
+                        <td>Parlé, lu, écrit</td>
+                    </tr>
+                    <tr>
+                        <td>Anglais</td>
+                        <td>Assez-bien</td>
+                        <td>Parlé, lu, écrit</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="declaration">
+            <p> Je déclare sur l'honneur que les renseignements metionnés ci-dessus sont exacts et authentiques.</p>
+        </div>
+        <div class="signature">
+            <p>L'intéressé</p>
+            <img src="Scan signature  .png" alt="signiature manuscrite" class="signiature-img" height="60px"
+                width="100px">
+            <p><strong>RAKOTOSON Rico</strong></p>
+        </div>
+
+        <button class="download-btn" onclick="downloadPDF()">Télecharger en PDF</button>
+    </div>
+</body>
+
+</html>
