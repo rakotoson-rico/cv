@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV-RAKOTOSON</title>
+    <title>CV-RAKOTOSON Rico</title>
     <link rel="icon" href="BackgroundEraser_20260218_054435863.png">
     <style>
         /* tout les element  */
@@ -139,12 +139,15 @@
             /* hakana ny soulignmnt ny */
             text-decoration: none;
             color: #2980b9;
+            font-weight: 500;
+            transition: color 0.2s;
 
         }
 
         a:hover {
             /* mitsipika rhf eo n souris  */
             text-decoration: underline;
+            color: #1f6fb5;
         }
 
         /* tableau  */
@@ -154,8 +157,11 @@
             /* fusion bordure , tss double bordure anaty cellule 1  */
             border-collapse: collapse;
             /* bord ex pleint couleur b  */
-            border: 2px solid #34495e;
+            border: 1px solid #34495e;
             font-size: 15px;
+            border-radius: 14px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+
         }
 
         /* ambony t  */
@@ -163,6 +169,8 @@
             background-color: #34495e;
             /* text io */
             color: beige;
+            font-weight: 600;
+            text-transform: uppercase;
             padding: 10px;
             border: 1px solid #34495e;
         }
@@ -178,7 +186,7 @@
         /* alternace de couleur @ligne tableau ,,,section ligne pair (even ) */
         tbody tr:nth-child(even) {
             /* ligne paires  */
-            background-color: #f8f9f9;
+            background-color: #f9fcff;
         }
 
         /* competence  */
@@ -198,10 +206,14 @@
             background-size: 18px;
         }
 
+        ul li:last-child {
+            border-bottom: none;
+        }
+
         /* rhf kiytina  */
         table:hover {
-            background-color: white;
-            color: #2c3e50;
+            background-color: #eef2f6;
+            transition: 0.15s;
         }
 
         /* etet civil it  */
@@ -212,6 +224,7 @@
             /* grid-template-columns: repeat(1, 1fr); */
             /* enspacement entre ligne 10px  */
             gap: 10px 20px;
+            grid-template-columns: repeat(auto-fit, animax(260px, 1fr));
         }
 
         .info-item {
@@ -231,22 +244,27 @@
         }
 
         .download-btn {
-            background-color: #2c3e50;
-            color: azure;
+            background: linear-gradient(145deg, #2c3e50, #1e2f40);
+            color: whitesmoke;
             border: none;
             /* espace interne  */
-            padding: 12px 30px;
-            border-radius: 50px;
+            padding: 13px 35px;
+            border-radius: 60px;
             font-size: 16px;
+            font-weight: 600;
             cursor: pointer;
             /* pour centrer eve margn auto  */
             display: block;
             /* text grass  */
             font-weight: bold;
+            border: 2px solid transparent;
+            background-clip: padding-box;
             /* animation legère  */
             transition: all 0.3s;
+            box-shadow: 0 10px 18px -8px #1e293b;
             /* bordure très plein  */
             border: 2px solid #2c3e50;
+            letter-spacing: 0.5px;
         }
 
         /* tsy isehoany @impression  */
@@ -340,6 +358,145 @@
             }
 
         }
+
+        .interests-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .interests-list li {
+            background: #ecf3fa;
+            border-radius: 50px;
+            padding: 10px 22px;
+            border: 1px solid #d0e0f0;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.03);
+            transition: 0.15s;
+        }
+
+        .interests-list li i {
+            color: #2c3e50;
+            font-size: 18px;
+        }
+
+        .interests-list li:hover {
+            background: #2c3e50;
+            color: white;
+            border-color: #2c3e50;
+        }
+
+        .interests-list li:hover i {
+            color: white;
+        }
+
+        /* Compétences techniques neny barres */
+        .skills-techniques {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            padding: 10px 5px;
+        }
+
+        .skill-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: #f1f6fb;
+            padding: 8px 18px;
+            border-radius: 60px;
+            box-shadow: inset 0 1px 4px #cbd5e1;
+        }
+
+        .skill-item span {
+            min-width: 90px;
+            font-weight: 700;
+            color: #1f3a57;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .skill-item span i {
+            color: #2c3e50;
+            font-size: 20px;
+        }
+
+        .progress-bar {
+            flex: 1;
+            height: 16px;
+            background: #d9e2ec;
+            border-radius: 40px;
+            overflow: hidden;
+            box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .progress {
+            height: 100%;
+            background: linear-gradient(90deg, #2c3e50, #4a6a8a);
+            border-radius: 40px;
+            width: 0%;
+            position: relative;
+            box-shadow: 0 0 6px #2c3e5080;
+        }
+
+        .lang-circles {
+            /* hampiatsk tsar  */
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin: 20px 0 10px;
+        }
+
+        .lang-item {
+            text-align: center;
+            background: #f8fafc;
+            padding: 20px 15px 15px;
+            border-radius: 40px;
+            box-shadow: 0 8px 18px -8px rgba(44, 62, 80, 0.2);
+            min-width: 130px;
+            transition: transform 0.2s;
+        }
+
+        .lang-item:hover {
+            transform: translateY(-5px);
+            background: white;
+        }
+
+        .skill-circle {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 22px;
+            /* soratr anatiny cercle io  */
+            color: #1e293b;
+            margin: 0 auto 12px;
+            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.2);
+            border: 4px solid white;
+            /* fallback */
+            background-color: #f0f4f9;
+        }
+
+        .lang-item span {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 18px;
+            background: #e9f0f9;
+            padding: 5px 15px;
+            border-radius: 40px;
+            display: inline-block;
+        }
     </style>
     <script>
         // afahana mamoka ny enregistrer tsara 
@@ -419,42 +576,57 @@
             <h2>COMPETENCES</h2>
             <ul>
                 <li>Très bonne compétence en adaptaton à chaque situation</li>
-                <li>Maîtrise avancée de la langue française et Anglais</li>
+                <li>Maîtrise avancée de la langue Française et Anglaise</li>
                 <li>Aptitude à communiquer clairement et efficacement</li>
-                <li>Facilmité à collaborer au sein d'une équipe </li>
+                <li>Facilité à collaborer au sein d'une équipe </li>
             </ul>
         </div>
+        <!-- competnc technq  -->
         <div class="section">
-            <h2>CONNAISSANCES LINGUSTIQUES</h2>
-            <table boder="4" cellpadding="10" cellspacing="4" style="text-align: center;" class="lang-table">
+            <h2>COMPÉTENCES TECHNIQUES</h2>
+            <div class="skills-techniques">
+                <div class="skill-item">
+                    <span><i class="fab fa-html5"></i> HTML</span>
+                    <div class="progress-bar">
+                        <!-- pourcentageny  -->
+                        <div class="progress" style="width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span><i class="fab fa-css3-alt"></i> CSS</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span><i class="fab fa-github"></i> GitHub</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 75%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                <thead>
-                    <tr>
-
-                        <th>DIPLÔME</th>
-                        <th>NIVEAU</th>
-                        <th>COMPETENCE</th>
-
-                </thead>
-                </tr>
-                <tbody>
-                    <tr>
-                        <td>Malagasy</td>
-                        <td>Très bien (maternel)</td>
-                        <td>Parlé, lu, écrit</td>
-                    </tr>
-                    <tr>
-                        <td>Français</td>
-                        <td>Bien</td>
-                        <td>Parlé, lu, écrit</td>
-                    </tr>
-                    <tr>
-                        <td>Anglais</td>
-                        <td>Assez-bien</td>
-                        <td>Parlé, lu, écrit</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="section">
+            <h2>LANGUES</h2>
+            <div class="lang-circles">
+                <div class="lang-item">
+                    <!-- hampisy n cercle  -->
+                    <div class="skill-circle"
+                        style="background: conic-gradient(#2c3e50 0deg 360deg, #e8eaeb 360deg 360deg);">100%</div>
+                    <span>Malagasy</span>
+                </div>
+                <div class="lang-item">
+                    <div class="skill-circle"
+                        style="background: conic-gradient(#2c3e50 0deg 306deg, #ecf0f1 306deg 360deg);">85%</div>
+                    <span>Français</span>
+                </div>
+                <div class="lang-item">
+                    <div class="skill-circle"
+                        style="background: conic-gradient(#2c3e50 0deg 216deg, #ecf0f1 216deg 360deg);">60%</div>
+                    <span>Anglais</span>
+                </div>
+            </div>
         </div>
         <div class="declaration">
             <p> Je déclare sur l'honneur que les renseignements metionnés ci-dessus sont exacts et authentiques.</p>
